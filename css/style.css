@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+:root
+{
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    /* Neutral */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+    --my-1: margin:1rem;
+    --padding:1rem;
+}
+body
+{
+    overflow-x: hidden;
+    background-color: var(--Light-grayish-blue);
+    height: 100vh;
+}
+img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+p
+{
+    Font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+}
+main
+{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid .card:nth-child(2) .main-info h4,
+.grid .card:nth-child(5) .main-info h4{
+    color: #fff;
+}
+.grid .card:nth-child(2) .text h3,
+.grid .card:nth-child(5) .text h3{
+    color: #fff;
+}
+.grid .card:nth-child(3) .text h3,
+.grid .card:nth-child(4) .text h3{
+    color: var(--Very-dark-grayish-blue);
+}
+.grid .card:nth-child(3) .text p,
+.grid .card:nth-child(4) .text p{
+    color: var(--Very-dark-grayish-blue);
+}
+.grid .card:nth-child(3) .main-info p,
+.grid .card:nth-child(4) .main-info p{
+    color: var(--Very-dark-grayish-blue);
+}
+/* grid  */
+.grid
+{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: repeat(2,); */
+    gap: 20px;
+    padding: 10px 100px;
+    position: relative;
+}
+.grid .card
+{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+}
+.grid .card .main-info
+{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+}
+.card .text p{
+    margin: 10px 0;
+}
+.card .text{
+    margin: 10px 0;
+    z-index: 2;
+}
+.grid .card .main-info img
+{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+.grid .card:nth-child(1)
+{
+    background-color: var(--Moderate-violet);
+    grid-column: span 6;
+    color: #fff;
+    color: var(--Light-gray);
+    position: relative;
+}
+.grid .card:nth-child(1)>.qutationimg{
+    content: '';
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-size: cover;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 100px;
+}
+.grid .card:nth-child(1) .main-info img{
+    border: 2px solid var(--Light-gray);
+}
+.grid .card:nth-child(1) .main-info >div h4
+{
+    color: var(--White);
+}
+.grid .card:nth-child(1) .text h3
+{
+    color:var(--White);
+}
+.grid .card:nth-child(2)
+{
+    background-color: var(--Very-dark-grayish-blue);
+    grid-column: span 3;
+    color: var(--Light-gray);
+}
+.grid .card:nth-child(3)
+{
+    background-color: #fff;
+    grid-column: span 3;
+    grid-row: span 2;
+    color: var(--Very-dark-grayish-blue);
+}
+.grid .card:nth-child(4)
+{
+    grid-column: span 3;
+    background-color: #fff;
+}
+.grid .card:nth-child(5)
+{
+    grid-column: span 6;
+    background-color: var(--Very-dark-blackish-blue);
+    color: var(--Light-gray);
+}
+.grid .card:nth-child(5) .main-info img{
+    border: 2px solid var(--Moderate-violet);
+}
+
+@media(max-width:1100px){
+    .grid{
+    padding: 10px 30px;
+}
+.grid .card:nth-child(1) {
+    grid-column: span 8;
+}
+.grid .card:nth-child(2) {
+    grid-column: span 4;
+}
+.grid .card:nth-child(3) {
+    grid-column: span 12;
+}
+.grid .card:nth-child(4) {
+    grid-column: span 4;
+}
+.grid .card:nth-child(5) {
+    grid-column: span 8;
+}
+}
+
+@media(max-width:768px){
+    .grid .card:nth-child(1)>.qutationimg{
+        width: 50px;
+        height: 50px;
+        top: 20%;
+    }
+    .card{
+        padding: 30px;
+    }
+    .grid .card:nth-child(1) {
+        grid-column: span 12;
+    }
+    .grid .card:nth-child(2) {
+        grid-column: span 12;
+    }
+    .grid .card:nth-child(3) {
+        grid-column: span 12;
+    }
+    .grid .card:nth-child(4) {
+        grid-column: span 12;
+    }
+    .grid .card:nth-child(5) {
+        grid-column: span 12;
+    }
+}
+
+
